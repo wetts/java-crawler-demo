@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.wetts</groupId>
+    <artifactId>java-crawler-demo</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>java-crawler-demo Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <jdk.version>1.8</jdk.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <junit.version>4.12</junit.version>
+
+        <commons-lang3.version>3.4</commons-lang3.version>
+
+        <!-- 日志 -->
+        <slf4j.version>1.7.7</slf4j.version>
+        <slf4j-api.version>1.7.10</slf4j-api.version>
+        <log4j.version>1.2.17</log4j.version>
+        <logback.version>1.1.2</logback.version>
+
+        <!-- 网络请求、爬虫 -->
+        <commons-httpclient.version>3.1</commons-httpclient.version>
+        <htmlparser.version>2.1</htmlparser.version>
+        <crawler4j.version>4.2</crawler4j.version>
+        <htmlUnit.version>2.22</htmlUnit.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>edu.uci.ics</groupId>
+            <artifactId>crawler4j</artifactId>
+            <version>${crawler4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sourceforge.htmlunit</groupId>
+            <artifactId>htmlunit</artifactId>
+            <version>${htmlUnit.version}</version>
+        </dependency>
+
+        <!--<dependency>-->
+        <!--<groupId>commons-httpclient</groupId>-->
+        <!--<artifactId>commons-httpclient</artifactId>-->
+        <!--<version>${commons-httpclient.version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.htmlparser</groupId>-->
+        <!--<artifactId>htmlparser</artifactId>-->
+        <!--<version>${htmlparser.version}</version>-->
+        <!--</dependency>-->
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <!-- Compiler 插件, 设定JDK版本 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                    <showWarnings>true</showWarnings>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
